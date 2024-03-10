@@ -4,21 +4,18 @@ import java.util.Random;
 
 public class EmpWageComputation 
 {
-
-	public static void main(String[] args) 
-	{
-		System.out.println("Welcome to Employee wage Computation Program on Master Branch");
-		int attendance = 0;
-		int emp_type = 0;
-		int daily_wage = 0;
-		int total_wage = 0;
-		int total_working_hr = 0;
-		int total_working_days = 1;
-		final int WAGE_PER_HR = 20;
-		final int FULL_TIME_HR = 8;
-		final int PART_TIME_HR = 4;
-		final int WORK_DAYS = 20;
+	int attendance = 0;
+	int emp_type = 0;
+	int daily_wage = 0;
+	int total_wage = 0;
+	int total_working_hr = 0;
+	int total_working_days = 1;
+	final int WAGE_PER_HR = 20;
+	final int FULL_TIME_HR = 8;
+	final int PART_TIME_HR = 4;
+	final int WORK_DAYS = 20;
 	
+	public void empWageCalc() {
 		while(total_working_hr <=100 && total_working_days <= 20)
 		{
 			
@@ -54,6 +51,14 @@ public class EmpWageComputation
 			total_working_days++;
 		}
 		System.out.println("Monthly Wages:-"+total_wage);
+
+		
+	}
+
+	public static void main(String[] args) 
+	{
+		EmpWageComputation empWageComputation = new EmpWageComputation();
+		empWageComputation.empWageCalc();
 		
 	}		
 }

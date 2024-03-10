@@ -19,28 +19,27 @@ public class EmpWageComputation
 		Random rm = new Random();
 		attendance = rm.nextInt(9)%2;
 		
-		
-		if(attendance == 0)
-		{
+		switch(attendance) {
+		case 0:
 			System.out.println("\nEmployee is absent");
-		}
-		else 
-		{
+			break;
+		case 1:
 			System.out.println("\nEmployee is present");
 			emp_type = rm.nextInt(9)%2;
-			if(emp_type == 0)
-			{
+			switch(emp_type) {
+			case 0:
 				System.out.println("\nEmployee is Full Timer");
 				daily_wage = FULL_TIME_HR * WAGE_PER_HR;
-					
-			}
-			else
-			{
+				break;
+			case 1:
 				System.out.println("\nEmployee is Part Timer");
-				daily_wage = PART_TIME_HR * WAGE_PER_HR;	
+				daily_wage = PART_TIME_HR * WAGE_PER_HR;
+				break;
 			}
 			System.out.println("Employee Wage =" + daily_wage);
-
+			break;
+		
 		}
+		
 	}		
 }

@@ -10,13 +10,16 @@ public class EmpWageComputation
 	int total_wage = 0;
 	int total_working_hr = 0;
 	int total_working_days = 1;
-	final int WAGE_PER_HR = 20;
+	int wage_per_hr;
 	final int FULL_TIME_HR = 8;
 	final int PART_TIME_HR = 4;
-	final int WORK_DAYS = 20;
+	int work_days ;
 	
-	public void empWageCalc() {
-		while(total_working_hr <=100 && total_working_days <= 20)
+	public void empWageCalc(int work_days , int wage_per_hr, int total_workings_days ){
+		
+		this.wage_per_hr = wage_per_hr;
+		this.work_days = work_days;
+		while(total_working_hr <= total_working_hr && total_working_days <=work_days)
 		{
 			
 			System.out.println("Day:-"+ total_working_days);
@@ -33,12 +36,12 @@ public class EmpWageComputation
 				switch(emp_type) {
 				case 0:
 					System.out.println("Employee is Full Timer");
-					daily_wage = FULL_TIME_HR * WAGE_PER_HR;
+					daily_wage = FULL_TIME_HR * wage_per_hr;
 					total_working_hr += FULL_TIME_HR;
 					break;
 				case 1:
 					System.out.println("Employee is Part Timer");
-					daily_wage = PART_TIME_HR * WAGE_PER_HR;
+					daily_wage = this.PART_TIME_HR * wage_per_hr;
 					total_working_hr += PART_TIME_HR;
 					break;
 				}
@@ -58,7 +61,13 @@ public class EmpWageComputation
 	public static void main(String[] args) 
 	{
 		EmpWageComputation empWageComputation = new EmpWageComputation();
-		empWageComputation.empWageCalc();
+		//(WORK_DAYS, WAGE_PER_HR, TOTAL_WORKING_DAYS);
+		empWageComputation.empWageCalc(20, 20, 20);
+		
+		EmpWageComputation cmp2 = new EmpWageComputation();
+		cmp2.empWageCalc(10, 30, 21);
+		
+		
 		
 	}		
 }
